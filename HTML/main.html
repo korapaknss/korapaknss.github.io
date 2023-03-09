@@ -10,9 +10,22 @@
 <body>
     <header>
         <h1>SKLEP KOMPUTEROWY</h1>
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="#">Rejestracja</a>
+          <a href="#">Logowanie</a>
+          <a href="#">Koszyk</a>
+          <br><br><br>
+          <a href="#">Informacje</a>
+          <a href="#">Składanie</a>
+          <a href="#">Produkty</a>
+          <a href="#">Kontakt</a>
+        </div>
+        <span class="menu" onclick="openNav()">&#9776;</span>
+        <script src="/Projekt_Zbojak_Tworkowski/JS/menu.js"></script>
     </header>
     <main>
-        <p>Wyróżnione produkty</p>
+        <p class="featured_products">Wyróżnione produkty</p>
         <div class="border">
         <div class="slideshow-container">
           <div class="mySlides fade">
