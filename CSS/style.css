@@ -1,14 +1,21 @@
+*{
+  font-family: Tahoma;
+}
+
 body{
-  background-color: aqua;
+  background-color: lightgray;
   margin: 0px;
 }
 
 header{
-  background-color: aqua;
+  padding-bottom: 50px;
 }
 
 main{
-  background-color: #717171;
+  background-color: #1d1b1b;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: -20px;
 }
 
 footer{
@@ -16,20 +23,20 @@ footer{
 }
 
 /*Od tego momentu slideshow*/
-
 * {box-sizing: border-box;}
 .mySlides {display: none;}
 img {vertical-align: middle;}
 
 .slideshow-container {
-  width: 50vh;
-  height: 30vh;
+  width: 70vh;
+  height: 50vh;
   position: relative;
   margin: auto;
   border-radius: 25px;
   border: 5px solid rgb(89, 0, 255);
   padding: 20px;
-  height: 330px;
+  height: 450px;
+  background-color: white;
 }
 
 .dot {
@@ -61,10 +68,8 @@ img {vertical-align: middle;}
 }
 
 img{
-  height: 300px;
-  width: 100px;
+  height: 400px;
 }
-
 /*Do tego momentu slideshow*/
 
 .featured_products{
@@ -179,3 +184,4 @@ img{
     margin: 10px;
     color: white;
   }
+  /*Do tego momentu menu*/
