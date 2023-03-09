@@ -9,19 +9,25 @@
 </head>
 <body>
     <header>
-        <h1>SKLEP KOMPUTEROWY</h1>
-        <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="#">Rejestracja</a>
+        <div class="topnav" id="myTopnav">
+          <h2 class="brand">DELIMITER</h2>
           <a href="#">Logowanie</a>
           <a href="#">Koszyk</a>
-          <br><br><br>
-          <a href="#">Informacje</a>
           <a href="#">Składanie</a>
-          <a href="#">Produkty</a>
+          <div class="dropdown">
+            <button class="dropbtn">Produkty
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+          <a href="#">O nas</a>
           <a href="#">Kontakt</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
-        <span class="menu" onclick="openNav()">&#9776;</span>
         <script src="/JS/menu.js"></script>
     </header>
     <main>

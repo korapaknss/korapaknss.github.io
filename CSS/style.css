@@ -1,3 +1,20 @@
+body{
+  background-color: aqua;
+  margin: 0px;
+}
+
+header{
+  background-color: aqua;
+}
+
+main{
+  background-color: #717171;
+}
+
+footer{
+  background-color: #717171
+}
+
 /*Od tego momentu slideshow*/
 
 * {box-sizing: border-box;}
@@ -59,50 +76,106 @@ img{
 }
 
 /*Od tego momentu menu*/
-
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
+.topnav {
+  overflow: hidden;
+  background-color: #333;
 }
 
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+.topnav a {
+  float: right;
   display: block;
-  transition: 0.3s;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-.sidenav a:hover {
-  color: #f1f1f1;
+.topnav .icon {
+  display: none;
 }
 
-.sidenav .closebtn {
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
   position: absolute;
-  top: 0;
-  right: 10px;
-  font-size: 36px;
-  margin-left: 50px;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
 }
 
-.menu{
-  font-size: 30px;
-  cursor: pointer;
-  position: absolute;
-  right: 15px;
-  top: 20px
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: white;
 }
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: right;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: right;
+  }
+}
+
+  .brand{
+    float: left;
+    margin: 10px;
+    color: white;
+  }
