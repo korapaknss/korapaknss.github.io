@@ -102,7 +102,14 @@ INSERT INTO `products` (`id`, `name`, `price`, `qt_in_stock`, `category_id`) VAL
 (5, 'Karta Graficzna', 1999.99, 49, 6),
 (6, 'Chłodzenie', 289.99, 93, 8),
 (7, 'Pamięć RAM', 244.99, 109, 9),
-(8, 'Dysk Twardy', 359.99, 211, 10);
+(8, 'Dysk Twardy', 359.99, 211, 10),
+(9, 'Słuchawki', 109.99, 272, 4),
+(10, 'Obudowa', 159.99, 132, 5),
+(11, 'Pasta termoprzewodząca', 59.99, 420, 15),
+(12, 'Procesor', 1299.99, 190, 7),
+(13, 'Zasilacz', 699.99, 111, 13),
+(14, 'Karta Sieciowa', 129.99, 232, 12),
+(15, 'Karta Dźwiękowa', 89.99, 254, 11);
 
 -- --------------------------------------------------------
 
