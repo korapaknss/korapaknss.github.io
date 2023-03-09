@@ -69,6 +69,7 @@ CREATE TABLE `clients` (
   `birthdate` date NOT NULL,
   `country` varchar(50) NOT NULL,
   `city` varchar(50) NOT NULL,
+  `postal_code` varchar(6) NOT NULL,
   `street` varchar(50) NOT NULL,
   `house_number` int(11) NOT NULL,
   `apartment_number` int(11) NOT NULL,
