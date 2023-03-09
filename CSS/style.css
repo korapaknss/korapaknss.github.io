@@ -13,8 +13,8 @@ header{
 
 main{
   background-color: #1d1b1b;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   margin-bottom: -20px;
 }
 
@@ -22,6 +22,29 @@ footer{
   background-color: #717171
 }
 
+.featured_products{
+  text-align: center;
+  color: rgb(89, 0, 255);
+  font-family: arial;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.contact_main{
+  padding-left: 20px;
+  margin-top: 20px;
+  padding-top: 5px;
+  padding-bottom: 18px;
+}
+
+.cont_main_atrb{
+  text-decoration: none;
+  color: black;
+}
+
+.cont_main_atrb:hover{
+  text-decoration: underline;
+}
 /*Od tego momentu slideshow*/
 * {box-sizing: border-box;}
 .mySlides {display: none;}
@@ -71,14 +94,6 @@ img{
   height: 400px;
 }
 /*Do tego momentu slideshow*/
-
-.featured_products{
-  text-align: center;
-  color: rgb(89, 0, 255);
-  font-family: arial;
-  font-size: 20px;
-  font-weight: bold;
-}
 
 /*Od tego momentu menu*/
 .topnav {
