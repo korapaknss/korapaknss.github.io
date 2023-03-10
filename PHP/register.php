@@ -16,8 +16,8 @@ $house_num = $_POST['house_num'];
 $apart_num = $_POST['apart_num'];
 $phone_num = $_POST['phone_num'];
 
-if(mysqli_query($c, 'SELECT email FROM clients WHERE email = $email;' = $email)){
-    
+if(mysqli_query($c, 'SELECT email FROM clients WHERE email = $email;' == $email)){
+    echo "Podany adres email jest już w użyciu!";
 }
 
 
