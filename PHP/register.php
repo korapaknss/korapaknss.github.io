@@ -21,11 +21,22 @@
     </form>
 
     <?php
-    $c = mysqli_connect('localhost', 'root', '', 'sklep_komputerowy');
     if(isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password'])){
+        $c = mysqli_connect('localhost', 'root', '', 'sklep_komputerowy');
         $login = $_POST['login'];
         $email = $_POST['email'];
         $password = $_POST['password'];
+        if(mysqli_query($c, 'SELECT EXISTS(SELECT 1 FROM clients WHERE email = $email);') == 1){
+            echo "<br>Podany adres email jest już w użyciu!";
+        }
+        if(mysqli_query($c, 'SELECT EXISTS(SELECT 1 FROM clients WHERE username = $login);') == 1){
+            echo "<br>Nazwa użytkownika jest zajęta!";
+        }
+        else{
+            mysqli_query($c, 'INSERT INTO clients(username, email, password) VALUES($login, $email, $password);');
+            echo "<br>Pomyślnie dodano użytkownika!";
+        }
+        mysqli_close($c);
     }
     
     // $name = $_POST['name'];
@@ -39,13 +50,6 @@
     // $house_num = $_POST['house_num'];
     // $apart_num = $_POST['apart_num'];
     // $phone_num = $_POST['phone_num'];
-
-    if(mysqli_query($c, 'SELECT email FROM clients WHERE email = $email;' == $email)){
-        echo "Podany adres email jest już w użyciu!";
-    }
-
-
-    mysqli_close($c);
     ?>
 </body>
 </html>
