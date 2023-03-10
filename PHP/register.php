@@ -14,7 +14,7 @@
         <!--Imię: <input type="text" name="name" required><br>
         Nazwisko: <input type="text" name="surname" required><br>
         Data urodzenia: <input type="date" name="birthdate" required><br>-->
-        Email: <input type="email" name="email" required><br>
+        Email: <input type="text" name="email" required><br>
         Hasło: <input type="password" name="password" required><br>
         <!--Powtórz hasło: <input type="password" name="ctr_password" required><br>-->
         <input type="submit" name="register" value="Zarejestruj się!">
@@ -26,14 +26,17 @@
         $login = $_POST['login'];
         $email = $_POST['email'];
         $password = $_POST['password'];
-        if(mysqli_query($c, 'SELECT EXISTS(SELECT 1 FROM clients WHERE email = $email);') == 1){
+
+        $q_em = mysqli_query($c, "SELECT * FROM clients WHERE email = '$email';");
+        $q_lo = mysqli_query($c, "SELECT * FROM clients WHERE username = '$login';");
+        if(mysqli_num_rows($q_em) > 0){
             echo "<br>Podany adres email jest już w użyciu!";
         }
-        if(mysqli_query($c, 'SELECT EXISTS(SELECT 1 FROM clients WHERE username = $login);') == 1){
+        else if(mysqli_num_rows($q_lo) > 0){
             echo "<br>Nazwa użytkownika jest zajęta!";
         }
         else{
-            mysqli_query($c, 'INSERT INTO clients(username, email, password) VALUES($login, $email, $password);');
+            mysqli_query($c, "INSERT INTO clients(username, email, password) VALUES('$login', '$email', '$password');");
             echo "<br>Pomyślnie dodano użytkownika!";
         }
         mysqli_close($c);

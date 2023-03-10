@@ -62,7 +62,7 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 CREATE TABLE `clients` (
   `id` int(11) NOT NULL,
   `username` varchar(12) NOT NULL,
-  `email` varchar(30) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `password` varchar(20) NOT NULL,
   `first_name` varchar(20) NOT NULL,
   `last_name` varchar(25) NOT NULL,
