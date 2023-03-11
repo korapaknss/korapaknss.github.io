@@ -13,7 +13,7 @@
         <h4>Nazwa użytkownika:</h4> <input type="text" name="login" required><br>
         <h4>Email:</h4> <input type="email" name="email" required><br>
         <h4>Hasło:</h4>
-        <h6>Hasło musi składać się z co najmniej 8 znaków i zawierać jedną wielką literę oraz znak specjalny</h6>
+        <h6>Hasło musi mieć długość od 8 do 20 znaków i zawierać jedną wielką literę oraz znak specjalny</h6>
         <input type="password" name="password" required>
         <h4>Powtórz hasło:</h4> <input type="password" name="ctr_password" required><br>
         <input type="submit" name="register" value="Zarejestruj się!">
@@ -27,22 +27,30 @@
         $password = $_POST['password'];
         $ctr_password = $_POST['ctr_password'];
 
+        $uppercase = preg_match('@[A-Z]@', $password);
+        $lowercase = preg_match('@[a-z]@', $password);
+        $number    = preg_match('@[0-9]@', $password);
+        $specialChars = preg_match('@[^\w]@', $password);
+
         $q_em = mysqli_query($c, "SELECT * FROM clients WHERE email = '$email';");
         $q_lo = mysqli_query($c, "SELECT * FROM clients WHERE username = '$login';");
-        echo mysqli_num_rows($q_lo);
-        echo mysqli_num_rows($q_em);
         if(mysqli_num_rows($q_em) > 0){
             echo "<br>Podany adres email jest już w użyciu!";
         }
         else if(mysqli_num_rows($q_lo) > 0){
             echo "<br>Nazwa użytkownika jest zajęta!";
         }
-        else if($password == $ctr_password){
-            mysqli_query($c, "INSERT INTO clients(username, email, password) VALUES('$login', '$email', '$password');");
-            echo "<br>Pomyślnie dodano użytkownika!";
+        else if(strlen($password) >= 8 && strlen($password) >= 8 && $uppercase && $lowercase && $number && $specialChars){
+            if($password == $ctr_password){
+                mysqli_query($c, "INSERT INTO clients(username, email, password) VALUES('$login', '$email', '$password');");
+                echo "<br>Pomyślnie dodano użytkownika!";
+            }
+            else{
+                echo "<br>Hasła nie są takie same!";
+            }
         }
         else{
-            echo "<br>Hasła nie są takie same!";
+            echo "<br>Hasło jest niepoprawne!";
         }
         mysqli_close($c);
     }
