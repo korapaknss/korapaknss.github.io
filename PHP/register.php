@@ -43,7 +43,7 @@
         else if(strlen($password) >= 8 && strlen($password) >= 8 && $uppercase && $lowercase && $number && $specialChars){
             if($password == $ctr_password){
                 mysqli_query($c, "INSERT INTO clients(username, email, password) VALUES('$login', '$email', '$password');");
-                header('adress_data.php');
+                header("Location: address_data.php");
             }
             else{
                 echo "<br>Hasła nie są takie same!";

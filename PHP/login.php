@@ -46,6 +46,7 @@
         else{
             echo "<br>Niepoprawna nazwa użytkownika lub email";
         }
+        mysqli_close($c);
     }
     ?>
 </body>
