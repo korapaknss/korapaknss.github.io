@@ -73,7 +73,7 @@ CREATE TABLE `clients` (
   `street` varchar(50) NOT NULL,
   `house_number` int(11) NOT NULL,
   `apartment_number` int(11) NOT NULL,
-  `phone_number` int(11) NOT NULL,
+  `phone_number` int(9) NOT NULL,
   `regular` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

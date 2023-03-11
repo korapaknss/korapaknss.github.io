@@ -38,14 +38,28 @@
         $house_num = $_POST['house_num'];
         $apart_num = $_POST['apart_num'];
         $phone_num = $_POST['phone_num'];
+        $regular = $_POST['regular'];
+        echo $regular;
 
         $postal_code_valid = preg_match( '/^([0-9]{2})(-[0-9]{3})?$/i', $postal_code);
+
+        $reg_check = false;
+        if($regular == 'on'){
+            $reg_check = true;
+        }
+        else{
+            $reg_check = false;
+        }
 
         if(!$postal_code_valid){
             echo "<br>Podaj prawidłowy kod pocztowy!";
         }
-
-        mysqli_query($c, "INSERT INTO clients(first_name, last_name, birthdate, country, city, postal_code, street, house_num, apart_num, phone_num) VALUES('$name', '$surname', '$birthdate', '$country', '$city', '$postal_code', '$street', '$house_num', '$apart_num', '$phone_num');");
+        else if(strlen($phone_num) != 9){
+            echo "<br>Podaj prawidłowy numer telefonu!";
+        }
+        else{
+            mysqli_query($c, "INSERT INTO clients(first_name, last_name, birthdate, country, city, postal_code, street, house_number, apartment_number, phone_number, regular) VALUES('$name', '$surname', '$birthdate', '$country', '$city', '$postal_code', '$street', '$house_num', '$apart_num', '$phone_num', '$reg_check');");
+        }
     }
     ?>
 </body>
