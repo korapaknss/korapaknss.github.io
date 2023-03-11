@@ -21,6 +21,22 @@
         Numer mieszkania: <input type="number" name="apart_num"><br>
         Numer telefonu: <input type="number" name="phone_num"><br>
         <input type="checkbox" name="regular">Czy chcesz zapisać się do programu stałego klienta i otrzymywać specjalne zniżki?<br>
+        <input type="submit" name="done" value="Zatwierdź">
     </form>
+
+    <?php
+    
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+    $birthdate = $_POST['birthdate'];
+    $ctr_password = $_POST['ctr_password'];
+    $country = $_POST['country'];
+    $city = $_POST['city'];
+    $postal_code = $_POST['postal_code'];
+    $street = $_POST['street'];
+    $house_num = $_POST['house_num'];
+    $apart_num = $_POST['apart_num'];
+    $phone_num = $_POST['phone_num'];
+    ?>
 </body>
 </html>

@@ -13,7 +13,7 @@
         <h4>Nazwa użytkownika:</h4> <input type="text" name="login" required><br>
         <h4>Email:</h4> <input type="email" name="email" required><br>
         <h4>Hasło:</h4>
-        <h6>Hasło musi mieć długość od 8 do 20 znaków i zawierać jedną wielką literę oraz znak specjalny</h6>
+        Hasło musi mieć długość od 8 do 20 znaków i zawierać jedną wielką literę oraz znak specjalny<br>
         <input type="password" name="password" required>
         <h4>Powtórz hasło:</h4> <input type="password" name="ctr_password" required><br>
         <input type="submit" name="register" value="Zarejestruj się!">
@@ -43,7 +43,7 @@
         else if(strlen($password) >= 8 && strlen($password) >= 8 && $uppercase && $lowercase && $number && $specialChars){
             if($password == $ctr_password){
                 mysqli_query($c, "INSERT INTO clients(username, email, password) VALUES('$login', '$email', '$password');");
-                echo "<br>Pomyślnie dodano użytkownika!";
+                header('adress_data.php');
             }
             else{
                 echo "<br>Hasła nie są takie same!";
@@ -55,17 +55,7 @@
         mysqli_close($c);
     }
     
-    // $name = $_POST['name'];
-    // $surname = $_POST['surname'];
-    // $birthdate = $_POST['birthdate'];
-    // $ctr_password = $_POST['ctr_password'];
-    // $country = $_POST['country'];
-    // $city = $_POST['city'];
-    // $postal_code = $_POST['postal_code'];
-    // $street = $_POST['street'];
-    // $house_num = $_POST['house_num'];
-    // $apart_num = $_POST['apart_num'];
-    // $phone_num = $_POST['phone_num'];
+    
     ?>
 </body>
 </html>
