@@ -29,6 +29,8 @@
 
         $q_em = mysqli_query($c, "SELECT * FROM clients WHERE email = '$email';");
         $q_lo = mysqli_query($c, "SELECT * FROM clients WHERE username = '$login';");
+        echo mysqli_num_rows($q_lo);
+        echo mysqli_num_rows($q_em);
         if(mysqli_num_rows($q_em) > 0){
             echo "<br>Podany adres email jest już w użyciu!";
         }

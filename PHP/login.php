@@ -10,10 +10,10 @@
     <header>
         <h1>Logowanie do Sklepu</h1>
     </header>
-    <form action="..\PHP\login.php" method="post">
-        Nazwa użytkownika lub email: <input type="text" name="login"><br>
-        Hasło: <input type="password" name="password"><br>
-        <input type="submit" name="login" value="Zaloguj się!">
+    <form action="" method="post">
+        Nazwa użytkownika lub email: <input type="text" name="login" required><br>
+        Hasło: <input type="password" name="password" required><br>
+        <input type="submit" name="log" value="Zaloguj się!">
     </form>
     <p>Nie masz konta? <a href="register.php">Zarejestruj się!</a></p>
 
@@ -25,8 +25,10 @@
 
         $q_lo = mysqli_query($c, "SELECT * FROM clients WHERE username = '$login';");
         $q_lo1 = mysqli_query($c, "SELECT * FROM clients WHERE email = '$login';");
+        $q_pas = mysqli_query($c, "SELECT * FROM clients WHERE username = '$login' AND password = '$password';");
+        $q_pas1 = mysqli_query($c, "SELECT * FROM clients WHERE email = '$login' AND password = '$password';");
         if(mysqli_num_rows($q_lo) > 0){
-            if(mysqli_query($c, "SELECT * FROM clients WHERE username = '$login' AND password = '$password';")){
+            if(mysqli_num_rows($q_pas) > 0){
                 echo "<br>Pomyślnie zalogowano!";
             }
             else{
@@ -34,7 +36,7 @@
             }
         }
         else if(mysqli_num_rows($q_lo1) > 0){
-            if(mysqli_query($c, "SELECT * FROM clients WHERE email = '$login' AND password = '$password';")){
+            if(mysqli_num_rows($q_pas1) > 0){
                 echo "<br>Pomyślnie zalogowano!";
             }
             else{
