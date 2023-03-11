@@ -29,7 +29,7 @@
         $q_pas1 = mysqli_query($c, "SELECT * FROM clients WHERE email = '$login' AND password = '$password';");
         if(mysqli_num_rows($q_lo) > 0){
             if(mysqli_num_rows($q_pas) > 0){
-                echo "<br>Pomyślnie zalogowano!";
+                header('Location: ..\HTML\index.html');
             }
             else{
                 echo "<br>Niepoprawne hasło!";
