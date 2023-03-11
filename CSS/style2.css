@@ -152,52 +152,34 @@ footer{
   }
 /*Do tego momentu menu*/
 
-/*Od tego momentu slideshow*/
+/*Od tego momentu porównanie*/
 * {box-sizing: border-box;}
-.mySlides {display: none;}
-img {vertical-align: middle;}
 
-.slideshow-container {
-  width: 70vh;
-  height: 50vh;
+.img-comp-container {
   position: relative;
-  margin: auto;
-  border-radius: 25px;
-  border: 5px solid rgb(89, 0, 255);
-  padding: 20px;
-  height: 450px;
-  background-color: white;
+  height: 300px;
 }
 
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
+.img-comp-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow:hidden;
+}
+
+.img-comp-img img {
+  display: block;
+  vertical-align: middle;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index: 9;
+  cursor: ew-resize;
+  width: 40px;
+  height: 40px;
+  background-color: purple;
+  opacity: 0.7;
   border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
 }
-
-.active {
-  background-color: #717171;
-}
-
-.fade {
-  animation-name: fade;
-  animation-duration: 2s;
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
-
-img{
-  height: 400px;
-}
-/*Do tego momentu slideshow*/
+/*Do tego momentu porównanie*/

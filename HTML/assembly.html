@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SKLEP KOMPUTEROWY</title>
-    <link rel="stylesheet" type="text/css" href="..\CSS\style.css">
+    <link rel="stylesheet" type="text/css" href="..\CSS\style2.css">
 </head>
 <body>
     <header>
@@ -31,30 +31,18 @@
         <script src="..\JS\menu.js"></script>
     </header>
     <main>
-        <p class="featured_products">Wyróżnione produkty</p>
-        <div class="border">
-        <div class="slideshow-container">
-          <div class="mySlides fade">
-            <img src="..\obrazy_temp\1.jpg" style="width:100%">
-          </div>
-          
-          <div class="mySlides fade">
-            <img src="..\obrazy_temp\2.jpg" style="width:100%">
-          </div>
-          
-          <div class="mySlides fade">
-            <img src="..\obrazy_temp\3.jpg" style="width:100%">
-          </div>
-          </div>
+        <div class="img-comp-container">
+            <div class="img-comp-img">
+              <img src="..\obrazy_temp\build.jpg" width="500" height="300">
+            </div>
+            <div class="img-comp-img img-comp-overlay">
+              <img src="..\obrazy_temp\parts.jpg" width="500" height="300">
+            </div>
         </div>
-          <br>
-          
-          <div style="text-align:center">
-            <span class="dot"></span> 
-            <span class="dot"></span> 
-            <span class="dot"></span>
-            <script src="..\JS\featured.js"></script>
-          </div>
+        <script src="..\JS\compare.js"></script>
+            <script>
+                initComparisons();
+            </script>  
     </main>
     <footer>
         <form class="contact_main">
@@ -67,5 +55,8 @@
           <a class="cont_main_atrb" href="statute.html">Aktualności</a><br>
         </form>
     </footer>
+    <script>
+        initComparisons();
+    </script>
 </body>
 </html>
