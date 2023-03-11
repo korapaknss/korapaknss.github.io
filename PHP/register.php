@@ -27,6 +27,9 @@
         $password = $_POST['password'];
         $ctr_password = $_POST['ctr_password'];
 
+        session_start();
+        $_SESSION['log_check'] = $login;
+
         $uppercase = preg_match('@[A-Z]@', $password);
         $lowercase = preg_match('@[a-z]@', $password);
         $number    = preg_match('@[0-9]@', $password);

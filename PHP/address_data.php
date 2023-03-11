@@ -39,7 +39,9 @@
         $apart_num = $_POST['apart_num'];
         $phone_num = $_POST['phone_num'];
         $regular = $_POST['regular'];
-        echo $regular;
+
+        session_start();
+        $log_check = $_SESSION['log_check'];
 
         $postal_code_valid = preg_match( '/^([0-9]{2})(-[0-9]{3})?$/i', $postal_code);
 
@@ -58,7 +60,7 @@
             echo "<br>Podaj prawidłowy numer telefonu!";
         }
         else{
-            mysqli_query($c, "INSERT INTO clients(first_name, last_name, birthdate, country, city, postal_code, street, house_number, apartment_number, phone_number, regular) VALUES('$name', '$surname', '$birthdate', '$country', '$city', '$postal_code', '$street', '$house_num', '$apart_num', '$phone_num', '$reg_check');");
+            mysqli_query($c, "UPDATE clients SET first_name = '$name', last_name = '$surname', birthdate = '$birthdate', country = '$country', city = '$city', postal_code = '$postal_code', street = '$street', house_number = '$house_num', apartment_number = '$apart_num', phone_number = '$phone_num', regular = '$reg_check' WHERE username = '$log_check';");
         }
     }
     ?>
