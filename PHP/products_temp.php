@@ -9,10 +9,7 @@ while($row = mysqli_fetch_assoc($q)){
 }
 echo "</ul></form>";
 
-while($row1 = mysqli_fetch_assoc($q)){
-    $id = $row1['id'];
-    if(isset($_POST['2'])){
-        echo "Wybrałeś coś!";
-    }
+if(isset($_POST['2'])){
+    echo "Wybrałeś 2!";
 }
 ?>
