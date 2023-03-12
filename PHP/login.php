@@ -31,7 +31,7 @@
             if(mysqli_num_rows($q_pas) > 0){
                 session_start();
                 $_SESSION['user'] = $login;
-                header('Location: ..\HTML\index.html');
+                header('Location: ..\PHP\index.php');
             }
             else{
                 echo "<br>Niepoprawne hasło!";

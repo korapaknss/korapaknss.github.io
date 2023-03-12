@@ -23,7 +23,18 @@ if(isset($_SESSION['user'])){
             echo "<a href='..\PHP\login.php'>Logowanie</a>";
           }
           else{
-            echo $user;
+            echo "
+            <div class='dropdown'>
+            <button class='dropbtn'>".$user."
+              <i class='fa fa-caret-down'></i>
+            </button>
+            <div class='dropdown-content'>
+              <a href='#'>Link 1</a>
+              <a href='#'>Link 2</a>
+              <a href='..\PHP\logout.php'>Wyloguj się</a>
+            </div>
+            </div>
+            ";
           }
           ?>
           <a href="#">Koszyk</a>
