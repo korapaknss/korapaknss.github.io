@@ -61,6 +61,7 @@
         }
         else{
             mysqli_query($c, "UPDATE clients SET first_name = '$name', last_name = '$surname', birthdate = '$birthdate', country = '$country', city = '$city', postal_code = '$postal_code', street = '$street', house_number = '$house_num', apartment_number = '$apart_num', phone_number = '$phone_num', regular = '$reg_check' WHERE username = '$log_check';");
+            header("Location: ..\PHP\login.php");
         }
     }
     ?>
