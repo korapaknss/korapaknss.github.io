@@ -32,7 +32,7 @@
 
         $uppercase = preg_match('@[A-Z]@', $password);
         $lowercase = preg_match('@[a-z]@', $password);
-        $number    = preg_match('@[0-9]@', $password);
+        $number = preg_match('@[0-9]@', $password);
         $specialChars = preg_match('@[^\w]@', $password);
 
         $q_em = mysqli_query($c, "SELECT * FROM clients WHERE email = '$email';");
