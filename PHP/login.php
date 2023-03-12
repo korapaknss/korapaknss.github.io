@@ -29,6 +29,8 @@
         $q_pas1 = mysqli_query($c, "SELECT * FROM clients WHERE email = '$login' AND password = '$password';");
         if(mysqli_num_rows($q_lo) > 0){
             if(mysqli_num_rows($q_pas) > 0){
+                session_start();
+                $_SESSION['user'] = $login;
                 header('Location: ..\HTML\index.html');
             }
             else{

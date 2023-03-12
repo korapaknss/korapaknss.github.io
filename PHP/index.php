@@ -1,4 +1,9 @@
-<?php include '..\PHP\session.php';?>
+<?php
+session_start();
+if(isset($_SESSION['user'])){
+  $user = $_SESSION['user'];
+}
+?>
 
 <!DOCTYPE html>
 <html lang="pl">
@@ -13,9 +18,16 @@
     <header>
         <div class="topnav" id="myTopnav">
           <h2 class="brand">DELIMETER</h2>
-          <a href="..\PHP\login.php">Logowanie</a>
+          <?php
+          if(!isset($_SESSION['user'])){
+            echo "<a href='..\PHP\login.php'>Logowanie</a>";
+          }
+          else{
+            echo $user;
+          }
+          ?>
           <a href="#">Koszyk</a>
-          <a href="assembly.html">Składanie</a>
+          <a href="..\HTML\assembly.html">Składanie</a>
           <div class="dropdown">
             <button class="dropbtn">Produkty
               <i class="fa fa-caret-down"></i>
