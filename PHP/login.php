@@ -39,7 +39,9 @@
         }
         else if(mysqli_num_rows($q_lo1) > 0){
             if(mysqli_num_rows($q_pas1) > 0){
-                echo "<br>Pomyślnie zalogowano!";
+                session_start();
+                $_SESSION['user'] = $login;
+                header('Location: ..\PHP\index.php');
             }
             else{
                 echo "<br>Niepoprawne hasło!";
