@@ -1,0 +1,53 @@
+*{
+    font-family: Tahoma;
+}
+html {
+    background: url(..\obrazy_temp\computer_bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+  }
+/*Logowanie*/
+
+/*Logowanie*/
+
+/*Rejestracja*/
+.reg{
+    background-color: #1d1b1b;
+    color: rgb(89, 0, 255);
+    margin-left: -8px;
+    margin-right: -8px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 65px;
+}
+.reg_form{
+    text-align: center;
+}
+.pass1{
+    margin-left: 25px;
+}
+
+input{
+    background-color: white;
+    border: 1px solid rgb(89, 0, 255);
+    color: rgb(89, 0, 255);
+}
+
+.butt{
+    border-radius: 20px;
+    background-color: white;
+    border: 1px solid rgb(89, 0, 255);
+    color: rgb(89, 0, 255);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: help;
+}
+header{
+    text-align: center;
+    margin-top: 50px;
+    font-size: x-large;
+}
+/*Rejestracja*/

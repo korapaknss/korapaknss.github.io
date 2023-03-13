@@ -5,19 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rejestracja</title>
+    <link rel="stylesheet" type="text/css" href="..\CSS\style3.css">
 </head>
 <body>
     <header><h1>Rejestracja do Sklepu</h1></header>
-    <form action="" method="post">
-        <h3>Dane konta:</h3>
+    <div class="reg">
+    <form class="reg_form" action="" method="post">
+        <h2>Dane konta:</h2><br>
         <h4>Nazwa użytkownika:</h4> <input type="text" name="login" required><br>
         <h4>Email:</h4> <input type="email" name="email" required><br>
         <h4>Hasło:</h4>
-        Hasło musi mieć długość od 8 do 20 znaków i zawierać jedną wielką literę oraz znak specjalny<br>
-        <input type="password" name="password" required>
-        <h4>Powtórz hasło:</h4> <input type="password" name="ctr_password" required><br>
+        <input class="pass1" type="password" name="password" required>
+        <button class="butt" onclick="pass();">?</button>
+        <h4>Powtórz hasło:</h4> <input type="password" name="ctr_password" required><br><br>
         <input type="submit" name="register" value="Zarejestruj się!">
     </form>
+    </div>
 
     <?php
     if(isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password'])){
@@ -60,5 +63,10 @@
     
     
     ?>
+    <script>
+        function pass(){
+           alert('Hasło musi mieć długość od 8 do 20 znaków i zawierać jedną wielką literę oraz znak specjalny'); 
+        }
+    </script>
 </body>
 </html>
