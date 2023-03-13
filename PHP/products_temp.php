@@ -11,7 +11,7 @@ while($row = mysqli_fetch_assoc($q)){
 }
 echo "</ul></form>";
 
-if(isset($_POST[$i])){
+if(isset($_POST['3'])){
     echo "Wybrałeś $i!";
 }
 ?>
