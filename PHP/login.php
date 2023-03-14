@@ -5,18 +5,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Logowanie</title>
+        <link rel="stylesheet" type="text/css" href="..\CSS\style3.css">
 </head>
 <body>
     <header>
         <h1>Logowanie do Sklepu</h1>
     </header>
-    <form action="" method="post">
-        Nazwa użytkownika lub email: <input type="text" name="login" required><br>
-        Hasło: <input type="password" name="password" required><br>
+    <div class="log">
+    <form class="log_form" action="" method="post">
+        Nazwa użytkownika lub email: <input type="text" name="login" required><br><br>
+        Hasło: <input type="password" name="password" required><br><br><br>
         <input type="submit" name="log" value="Zaloguj się!">
-    </form>
     <p>Nie masz konta? <a href="register.php">Zarejestruj się!</a></p>
-
+    </form>
+    </div>
     <?php
     if(isset($_POST['login']) && isset($_POST['password'])){
         $c = mysqli_connect('localhost', 'root', '', 'sklep_komputerowy');
