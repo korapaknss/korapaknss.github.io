@@ -15,7 +15,7 @@
     <form class="log_form" action="" method="post">
         Nazwa użytkownika lub email: <input type="text" name="login" required><br><br>
         Hasło: <input type="password" name="password" required><br><br><br>
-        <input type="submit" name="log" value="Zaloguj się!">
+        <input class="press" type="submit" name="log" value="Zaloguj się!">
     <p>Nie masz konta? <a href="register.php">Zarejestruj się!</a></p>
     </form>
     </div>

@@ -51,6 +51,9 @@ header{
     -webkit-text-stroke: 2px rgb(89, 0, 255);
 }
 
+.press{
+    cursor: pointer;
+}
 /*Logowanie*/
 .log{
     background-color: rgb(29, 27, 27, 0.80);

@@ -18,7 +18,7 @@
         <input class="pass1" type="password" name="password" required>
         <button class="butt" onclick="pass();">?</button>
         <h4>Powtórz hasło:</h4> <input type="password" name="ctr_password" required><br><br>
-        <input type="submit" name="register" value="Zarejestruj się!">
+        <input class="press" type="submit" name="register" value="Zarejestruj się!">
     </form>
     </div>
 
