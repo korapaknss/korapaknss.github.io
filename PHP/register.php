@@ -65,7 +65,7 @@
     ?>
     <script>
         function pass(){
-           alert('Hasło musi mieć długość od 8 do 20 znaków i zawierać jedną wielką literę oraz znak specjalny'); 
+           alert('Hasło musi mieć długość od 8 do 20 znaków i zawierać jedną wielką literę, cyfrę oraz znak specjalny'); 
         }
     </script>
 </body>
