@@ -17,7 +17,7 @@ if(isset($_SESSION['user'])){
 <body>
     <header>
         <div class="topnav" id="myTopnav">
-        <h2 class="brand">DELIMETER</h2>
+        <h2 class="brand">DELIMITER</h2>
           <?php
           if(!isset($_SESSION['user'])){
             echo "<a href='..\PHP\login.php'>Logowanie</a>";
@@ -51,6 +51,7 @@ if(isset($_SESSION['user'])){
           </div>
           <a href="..\HTML\aboutus.html">O nas</a>
           <a href="..\HTML\contact.html">Kontakt</a>
+          <a href="..\PHP\index.php">Strona Główna</a>
           <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
         <script src="..\JS\menu.js"></script>
@@ -85,7 +86,7 @@ if(isset($_SESSION['user'])){
         <form class="contact_main">
           <p style="font-weight: bold;">Dane kontaktowe:</p>
           Telefon: <a class="cont_main_atrb" href="#">+48 451 751 166</a><br>
-          E-mail: <a class="cont_main_atrb" href="#">deli@meter.pl </a><br>
+          E-mail: <a class="cont_main_atrb" href="#">deli@miter.pl</a><br>
           Adres: <a class="cont_main_atrb" href="#">Warszawa, ul. Trocka 11</a><br><br>
           <a class="cont_main_atrb" href="statute.html">Regulamin</a><br>
           <a class="cont_main_atrb" href="statute.html">Polityka prywatności</a><br>
