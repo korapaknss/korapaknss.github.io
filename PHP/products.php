@@ -8,6 +8,7 @@ $c = mysqli_connect('localhost', 'root', '', 'sklep_komputerowy');
     <head>
         <title>Produkty</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="..\CSS\style4.css">
     </head>
 
     <body>
@@ -16,7 +17,7 @@ $c = mysqli_connect('localhost', 'root', '', 'sklep_komputerowy');
                 <?php
                 $q = mysqli_query($c, "SELECT id, name, price, qt_in_stock FROM products;");
                 while($row = mysqli_fetch_assoc($q)){
-                    echo "<li>" . $row['name'] . " Cena: " . $row['price'] . "zł Ilość w magazynie: " . $row['qt_in_stock'] . "</li><input type='number' name='quantity' value='1' min='1' max='" . $row['qt_in_stock'] . "'><input type='hidden' name='id' value='" . $row['id'] . "'><input type='submit' value='Dodaj do koszyka'>";
+                    echo "<div>" . $row['name'] ."<br>". " Cena: " . $row['price'] . "zł <br> Ilość w magazynie: " . $row['qt_in_stock'] . "<br><input type='number' name='quantity' value='1' min='1' max='" . $row['qt_in_stock'] . "'><input type='hidden' name='id' value='" . $row['id'] . "'> <input class='addtocart' type='submit' value='Dodaj do koszyka'></div><br>";
                 }
                 ?>
             </ul>
