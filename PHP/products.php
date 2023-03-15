@@ -16,7 +16,7 @@ $c = mysqli_connect('localhost', 'root', '', 'sklep_komputerowy');
                 <?php
                 $q = mysqli_query($c, "SELECT id, name, price, qt_in_stock FROM products;");
                 while($row = mysqli_fetch_assoc($q)){
-                    echo "<li>" . $row['name'] . " " . $row['price'] . "zł " . $row['qt_in_stock'] . "</li><input type='number' name='quantity' value='1' min='1' max='" . $row['qt_in_stock'] . "'><input type='hidden' name='id' value='" . $row['id'] . "'><input type='submit' value='Dodaj do koszyka'>";
+                    echo "<li>" . $row['name'] . " Cena: " . $row['price'] . "zł Ilość w magazynie: " . $row['qt_in_stock'] . "</li><input type='number' name='quantity' value='1' min='1' max='" . $row['qt_in_stock'] . "'><input type='hidden' name='id' value='" . $row['id'] . "'><input type='submit' value='Dodaj do koszyka'>";
                 }
                 ?>
             </ul>
