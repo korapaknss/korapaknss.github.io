@@ -44,7 +44,7 @@ if(isset($_SESSION['user'])){
               <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-              <a href="..\PHP\products_temp.php">Link 1</a>
+              <a href="..\PHP\products.php">Link 1</a>
               <a href="#">Link 2</a>
               <a href="#">Link 3</a>
             </div>
