@@ -30,4 +30,7 @@ if(isset($_SESSION['cart']) && is_array($_SESSION['cart'])){
         $_SESSION['cart'] = $cart;
     }
 }
+else{
+    echo "<h1>Twój koszyk jest pusty!</h1>";
+}
 ?>
