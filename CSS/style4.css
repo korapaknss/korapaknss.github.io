@@ -1,0 +1,30 @@
+*{
+    font-family: Tahoma;
+}
+body{
+    color: white;
+    background-color: #111010;
+}
+div{
+    border: 1px rgb(89, 0, 255) solid;
+    background-color: #1d1b1b;
+    padding: 5px;
+    margin-right: 50px;
+    border-radius: 8px;
+}
+div:hover{
+    background-color: #201e1e;
+    border: 1px rgb(106, 26, 255) solid;
+}
+input{
+    background-color: white;
+    border: 1px solid rgb(89, 0, 255);
+    color: rgb(89, 0, 255);
+    border-radius: 8px;
+}
+.addtocart{
+    cursor: pointer;
+}
+.addtocart:hover{
+    background-color: rgb(228, 228, 228);
+}
