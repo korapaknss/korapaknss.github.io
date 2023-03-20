@@ -1,19 +1,24 @@
-<script>
-    if ( window.history.replaceState ) {
-        window.history.replaceState( null, null, window.location.href );
-    }
-</script>
-
 <?php
 session_start();
 $c = mysqli_connect('localhost', 'root', '', 'sklep_komputerowy');
+$q = mysqli_query($c, "SELECT id, image, name, price, qt_in_stock FROM products WHERE id = " . $_GET['id'] . ";");
+$product = mysqli_fetch_assoc($q);
 ?>
 
+<!DOCTYPE HTML>
+<html lang="pl">
+    <head>
+        <title>Produkt</title>
+        <meta charset="utf-8">
+    </head>
+    
+    <body>
+        <h1><?php echo $prodcut['name'] ?></h1>
+    </body>
+</html>
+
 <?php
-$q = mysqli_query($c, "SELECT id, name, price, qt_in_stock FROM products;");
-while($row = mysqli_fetch_assoc($q)){
-    echo "<div>" . $row['name'] ."<br>". " Cena: " . $row['price'] . "zł <br> Ilość w magazynie: " . $row['qt_in_stock'] . "<br><input type='number' name='quantity' value='1' min='1' max='" . $row['qt_in_stock'] . "'><input type='hidden' name='id' value='" . $row['id'] . "'> <input class='addtocart' type='submit' value='Dodaj do koszyka'></div><br>";
-}
+
 mysqli_close($c);
 ?>
 
