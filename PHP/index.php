@@ -61,15 +61,15 @@ if(isset($_SESSION['user'])){
         <div class="border">
         <div class="slideshow-container">
           <div class="mySlides fade">
-            <img src="..\obrazy_temp\1.jpg" style="width:100%">
+            <img src="..\images\cooling.jpg" style="width:100%">
           </div>
           
           <div class="mySlides fade">
-            <img src="..\obrazy_temp\2.jpg" style="width:100%">
+            <img src="..\images\mouse.jpg" style="width:100%">
           </div>
           
           <div class="mySlides fade">
-            <img src="..\obrazy_temp\3.jpg" style="width:100%">
+            <img src="..\images\monitor.jpg" style="width:100%">
           </div>
           </div>
         </div>
