@@ -5,19 +5,26 @@ if(isset($_POST['product_id'], $_POST['quantity']) && is_numeric($_POST['product
     $id = (int)$_POST['product_id'];
     $quantity = (int)$_POST['quantity'];
 
-    if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
-        if (array_key_exists($id, $_SESSION['cart'])) {
-            $_SESSION['cart'][$id] += $quantity;
+    $c = mysqli_connect('localhost', 'root', '', 'sklep_komputerowy');
+    $q = mysqli_query($c, "SELECT id, image, name, price, qt_in_stock FROM products WHERE id = " . $_POST['id'] . ";");
+    $product = mysqli_fetch_assoc($q);
+    mysqli_close($c);
+
+    if($product && $quantity > 0){
+        if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
+            if (array_key_exists($id, $_SESSION['cart'])) {
+                $_SESSION['cart'][$id] += $quantity;
+            } 
+            else {
+                $_SESSION['cart'][$id] = $quantity;
+            }
         } 
         else {
-            $_SESSION['cart'][$id] = $quantity;
+            $_SESSION['cart'] = array($id => $quantity);
         }
-    } 
-    else {
-        $_SESSION['cart'] = array($id => $quantity);
-    }
 
-    header("Location: shopping_cart.php");
+        header("Location: shopping_cart.php");
+    }
 }
 
 if (isset($_GET['remove']) && is_numeric($_GET['remove']) && isset($_SESSION['cart']) && isset($_SESSION['cart'][$_GET['remove']])) {
