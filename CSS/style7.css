@@ -1,9 +1,13 @@
 *{
     font-family: Tahoma;
+    font-size: x-large;
 }
 
 body{
-  margin: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-top: 20%;
   background-color: #1d1b1b;
   color: white;
   text-align: center;
@@ -12,4 +16,8 @@ body{
 a{
     color: lightgray;
     text-decoration: none;
+}
+
+a:hover{
+    color: rgb(156, 155, 155);
 }
