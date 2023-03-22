@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(isset($_SESSION['user'])){
+    $user = $_SESSION['user'];
+}
 $c = mysqli_connect('localhost', 'root', '', 'sklep_komputerowy');
 ?>
 
