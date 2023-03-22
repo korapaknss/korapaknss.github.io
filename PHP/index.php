@@ -29,8 +29,6 @@ if(isset($_SESSION['user'])){
               <i class='fa fa-caret-down'></i>
             </button>
             <div class='dropdown-content'>
-              <a href='#'>Link 1</a>
-              <a href='#'>Link 2</a>
               <a href='..\PHP\logout.php'>Wyloguj się</a>
             </div>
             </div>
@@ -38,19 +36,9 @@ if(isset($_SESSION['user'])){
           }
           ?>
           <a href="..\PHP\shopping_cart.php">Koszyk</a>
-          <a href="..\HTML\assembly.html">Składanie</a>
-          <div class="dropdown">
-            <button class="dropbtn">Produkty
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="..\PHP\products.php">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-          </div>
-          <a href="..\HTML\aboutus.html">O nas</a>
-          <a href="..\HTML\contact.html">Kontakt</a>
+          <a href="..\PHP\assembly.php">Składanie</a>
+          <a href="..\PHP\products.php">Produkty</a>
+          <a href="..\PHP\contact.php">Kontakt</a>
           <a href="..\PHP\index.php">Strona Główna</a>
           <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
