@@ -1,5 +1,11 @@
 <?php
 session_start();
+$c = mysqli_connect('localhost', 'root', '', 'sklep_komputerowy');
+
+foreach($_SESSION['cart_products'] as $id => $quan){
+    mysqli_query($c, "UPDATE products SET qt_in_stock = qt_in_stock - " . $quan . " WHERE id=" . $id . ";");
+}
+
 unset($_SESSION['cart']);
 ?>
 

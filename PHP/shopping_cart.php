@@ -47,6 +47,7 @@ if ($products_in_cart) {
         $subtotal += (float)$product['price'] * (int)$products_in_cart[$product['id']];
     }
     $_SESSION['cart_price'] = $subtotal;
+    $_SESSION['cart_products'] = $products_in_cart;
 }
 
 ?>
@@ -102,6 +103,7 @@ if ($products_in_cart) {
             <span class="price"><?=$subtotal?> zł</span>
         </div>
         <?php if (!empty($products)): ?>
+        <input type="checkbox" name="assembly">&nbspSkładanie w salonie
         <div class="buttons">
             <input type="submit" value="Wyczyść koszyk" name="clear">
             <input type="submit" value="Zatwierdź zamówienie" name="placeorder">
