@@ -141,11 +141,8 @@ CREATE TABLE `sales` (
 
 CREATE TABLE `transactions` (
   `id` int(11) NOT NULL,
-  `price` int(11) NOT NULL,
+  `price` float NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `payment_type` varchar(30) NOT NULL,
-  `delivery_method` varchar(30) NOT NULL,
-  `product_id` int(11) NOT NULL,
   `client_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -183,7 +180,6 @@ ALTER TABLE `sales`
 --
 ALTER TABLE `transactions`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `product_id` (`product_id`),
   ADD KEY `client_id` (`client_id`);
 
 --
@@ -234,7 +230,6 @@ ALTER TABLE `sales`
 -- Ograniczenia dla tabeli `transactions`
 --
 ALTER TABLE `transactions`
-  ADD CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
   ADD CONSTRAINT `transactions_ibfk_2` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`);
 COMMIT;
 

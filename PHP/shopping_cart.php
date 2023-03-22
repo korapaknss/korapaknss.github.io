@@ -46,6 +46,7 @@ if ($products_in_cart) {
     foreach ($products as $product) {
         $subtotal += (float)$product['price'] * (int)$products_in_cart[$product['id']];
     }
+    $_SESSION['cart_price'] = $subtotal;
 }
 
 ?>
@@ -60,7 +61,7 @@ if ($products_in_cart) {
 
     <body>
         <h1>Twój koszyk:</h1>
-        <form action="index.php?page=cart" method="post">
+        <form action="..\PHP\tunel.php" method="post">
         <table>
             <thead>
                 <tr>
@@ -100,10 +101,12 @@ if ($products_in_cart) {
             <span class="text">Suma</span>
             <span class="price"><?=$subtotal?> zł</span>
         </div>
+        <?php if (!empty($products)): ?>
         <div class="buttons">
             <input type="submit" value="Wyczyść koszyk" name="clear">
             <input type="submit" value="Zatwierdź zamówienie" name="placeorder">
         </div>
+        <?php endif; ?>
     </form>
     </body>
 </html>
