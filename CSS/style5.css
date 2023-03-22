@@ -1,0 +1,88 @@
+h1 {
+	display: block;
+	font-weight: normal;
+	margin: 0;
+	padding: 40px 0;
+	font-size: 24px;
+	text-align: center;
+	width: 100%;
+}
+
+table {
+	width: 100%;
+}
+
+table thead td {
+	padding: 30px 0;
+	border-bottom: 1px solid #EEEEEE;
+}
+
+table thead td:last-child {
+	text-align: right;
+}
+
+table tbody td {
+	padding: 20px 0;
+	border-bottom: 1px solid #EEEEEE;
+}
+
+table tbody td:last-child {
+	text-align: right;
+}
+
+table .img {
+	width: 80px;
+}
+
+table .remove {
+	color: #777777;
+	font-size: 12px;
+	padding-top: 3px;
+}
+
+table .remove:hover {
+	text-decoration: underline;
+}
+
+table .price {
+	color: #999999;
+}
+
+table a {
+	text-decoration: none;
+	color: #555555;
+}
+
+.subtotal {
+	text-align: right;
+	padding: 40px 0;
+}
+
+.subtotal .text {
+	padding-right: 40px;
+	font-size: 18px;
+}
+
+.subtotal .price {
+	font-size: 18px;
+	color: #999999;
+}
+
+.buttons {
+	text-align: right;
+	padding-bottom: 40px;
+}
+.buttons input[type="submit"] {
+	margin-left: 5px;
+	padding: 12px 20px;
+	border: 0;
+	background: #4e5c70;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.buttons input[type="submit"]:hover {
+	background: #434f61;
+}

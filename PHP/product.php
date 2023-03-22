@@ -19,8 +19,8 @@ mysqli_close($c);
         <h4><?php echo $product['price'] ?> zł</h4>
         <h4>Ilość w magazynie: <?php echo $product['qt_in_stock'] ?></h4>
         <form action="shopping_cart.php" method="post">
-            <input type="number" name="quantity" value="1" min="1" max="<?php $product['qt_in_stock'] ?>" required>
-            <input type="hidden" name="product_id" value="<?php $product['id'] ?>">
+            <input type="number" name="quantity" value="1" min="1" max="<?php echo $product['qt_in_stock'] ?>" required>
+            <input type="hidden" name="product_id" value="<?php echo $product['id'] ?>">
             <input type="submit" value="Dodaj do koszyka">
         </form>
     </body>

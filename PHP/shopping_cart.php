@@ -6,7 +6,7 @@ if(isset($_POST['product_id'], $_POST['quantity']) && is_numeric($_POST['product
     $quantity = (int)$_POST['quantity'];
 
     $c = mysqli_connect('localhost', 'root', '', 'sklep_komputerowy');
-    $q = mysqli_query($c, "SELECT id, image, name, price, qt_in_stock FROM products WHERE id = " . $_POST['id'] . ";");
+    $q = mysqli_query($c, "SELECT id, image, name, price, qt_in_stock FROM products WHERE id = " . $_POST['product_id'] . ";");
     $product = mysqli_fetch_assoc($q);
     mysqli_close($c);
 
@@ -55,6 +55,7 @@ if ($products_in_cart) {
     <head>
         <title>Koszyk</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="..\CSS\style5.css">
     </head>
 
     <body>
@@ -88,9 +89,7 @@ if ($products_in_cart) {
                         <a href="..\PHP\shopping_cart.php?&remove=<?=$product['id']?>" class="remove">Usuń</a>
                     </td>
                     <td class="price"><?=$product['price']?> zł</td>
-                    <td class="quantity">
-                        <input type="number" name="quantity-<?=$product['id']?>" value="<?=$products_in_cart[$product['id']]?>" min="1" max="<?=$product['qt_in_stock']?>" required>
-                    </td>
+                    <td class="quantity"><?php echo $products_in_cart[$product['id']] ?></td>
                     <td class="price"><?=$product['price'] * $products_in_cart[$product['id']]?> zł</td>
                 </tr>
                 <?php endforeach; ?>
@@ -100,6 +99,10 @@ if ($products_in_cart) {
         <div class="subtotal">
             <span class="text">Suma</span>
             <span class="price"><?=$subtotal?> zł</span>
+        </div>
+        <div class="buttons">
+            <input type="submit" value="Wyczyść koszyk" name="clear">
+            <input type="submit" value="Zatwierdź zamówienie" name="placeorder">
         </div>
     </form>
     </body>
