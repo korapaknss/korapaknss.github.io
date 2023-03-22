@@ -1,0 +1,15 @@
+*{
+    font-family: Tahoma;
+}
+
+body{
+  margin: 0px;
+  background-color: #1d1b1b;
+  color: white;
+  text-align: center;
+}
+
+a{
+    color: lightgray;
+    text-decoration: none;
+}

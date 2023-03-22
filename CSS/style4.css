@@ -55,6 +55,10 @@ img{
     color: lightgray;
 }
 
+.prod:hover{
+    color: rgb(156, 155, 155);
+}
+
 footer{
     background-color: #717171;
     color: black;
