@@ -11,21 +11,27 @@
     <header>
         <div class="topnav" id="myTopnav">
           <h2 class="brand">DELIMITER</h2>
-          <a href="..\PHP\login.php">Logowanie</a>
-          <a href="#">Koszyk</a>
-          <a href="..\HTML\assembly.html">Składanie</a>
-          <div class="dropdown">
-            <button class="dropbtn">Produkty
-              <i class="fa fa-caret-down"></i>
+          <?php
+          if(!isset($_SESSION['user'])){
+            echo "<a href='..\PHP\login.php'>Logowanie</a>";
+          }
+          else{
+            echo "
+            <div class='dropdown'>
+            <button class='dropbtn'>".$user."
+              <i class='fa fa-caret-down'></i>
             </button>
-            <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
+            <div class='dropdown-content'>
+              <a href='..\PHP\logout.php'>Wyloguj się</a>
             </div>
-          </div>
-          <a href="..\HTML\aboutus.html">O nas</a>
-          <a href="..\HTML\contact.html">Kontakt</a>
+            </div>
+            ";
+          }
+          ?>
+          <a href="..\PHP\shopping_cart.php">Koszyk</a>
+          <a href="..\PHP\assembly.php">Składanie</a>
+          <a href="..\PHP\products.php">Produkty</a>
+          <a href="..\PHP\contact.php">Kontakt</a>
           <a href="..\PHP\index.php">Strona Główna</a>
           <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
@@ -33,6 +39,7 @@
     </header>
     <main>
       <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d610.314282322881!2d21.05512902926641!3d52.27503371931965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ece9d984e5427%3A0x6ff3f3c1437bc46e!2sTrocka%2011%2C%2003-563%20Warszawa!5e0!3m2!1spl!2spl!4v1678655043360!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <img class="contact_img" src="..\images\callcenter.png" style="height:550px; margin-left:15%; border: 1px solid white; background-color: white;">
     </main>
     <footer>
         <form class="contact_main">
