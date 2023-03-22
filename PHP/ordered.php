@@ -19,7 +19,7 @@ unset($_SESSION['cart']);
     <link rel="stylesheet" type="text/css" href="..\CSS\style7.css">
 </head>
 <body>
-    <h1>Twoje zamówienie zostało złożone!</h1>
+    <h1>Twoje zamówienie zostało złożone!</h1><br><br>
     <h3><a href="..\PHP\index.php">Powrót na stronę główną</a></h3>
 </body>
 </html>
