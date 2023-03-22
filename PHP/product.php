@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(isset($_SESSION['user'])){
+    $user = $_SESSION['user'];
+}
 $c = mysqli_connect('localhost', 'root', '', 'sklep_komputerowy');
 $q = mysqli_query($c, "SELECT id, image, name, price, qt_in_stock FROM products WHERE id = " . $_GET['id'] . ";");
 $product = mysqli_fetch_assoc($q);
